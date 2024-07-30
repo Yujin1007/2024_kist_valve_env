@@ -4,7 +4,8 @@ import time
 
 import pandas as pd
 
-sys.path.append('/home/kist-robot2/Franka/weight')
+# sys.path.append('/home/kist-robot2/Franka/2024_kist_valve_env/weight')
+sys.path.append('/home/kist-robot2/Franka/franka_valve/build')
 import numpy as np
 import sys
 from numpy.linalg import inv
@@ -17,7 +18,8 @@ from scipy.spatial.transform import Rotation as R
 from mujoco import viewer
 import tools
 import torch
-
+from build import controller
+from Classifier import Classifier
 BODY = 1
 JOINT = 3
 GEOM = 5
@@ -37,7 +39,9 @@ RL_CIRCULAR_CONTROL = 4
 RL_CONTROL = 6
 
 def BringClassifier(path):
-    classifier = torch.load(path)
+    classifier = Classifier(input_size=8, output_size=20)
+    classifier.load_model(path)
+    # classifier = torch.load(path)
     classifier.eval()
     return classifier
 
@@ -52,13 +56,13 @@ class valve_template:
         self.model_path = "../model/scene_valve.xml"
         self.model = mujoco.MjModel.from_xml_path(self.model_path)
         self.data = mujoco.MjData(self.model)
-        if OBJ == "valve":
-            from Handle import controller
-            self.controller = controller.CController(self.k)
-        elif OBJ == "handle":
-            from Valve import controller
-            self.controller = controller.CController(self.k)
-
+        # if OBJ == "valve":
+        #     from Handle import controller
+        #     self.controller = controller.CController(self.k)
+        # elif OBJ == "handle":
+        #     from Valve import controller
+        #     self.controller = controller.CController(self.k)
+        self.controller = controller.CController(self.k)
         self._torque = np.zeros(self.dof, dtype=np.float64)
         self.rendering = True
         self.train = False

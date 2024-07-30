@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -26,3 +27,6 @@ class Classifier(nn.Module):
         # x = F.relu(self.fc4(x))
         # x = F.sigmoid(self.fc4(x))
         return x
+
+    def load_model(self, path):
+        self.load_state_dict(torch.load(path))

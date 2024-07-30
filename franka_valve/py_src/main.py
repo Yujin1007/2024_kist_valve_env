@@ -7,7 +7,7 @@ from tqc import structures, DEVICE
 from tqc.trainer import Trainer
 from tqc.structures import Actor, Critic
 import fr3Env
-from Classifier import Classifier
+# from Classifier import Classifier
 
 def main(PATH, TRAIN, RENDERING, OBJ, OFFLINE1, OFFLINE2):
     env = fr3Env.valve_env1(RENDERING, TRAIN, OBJ)
