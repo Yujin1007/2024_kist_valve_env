@@ -1,5 +1,6 @@
 #include "robotmodel.h"
 #define JDOF 7
+#include <filesystem>
 
 CModel::CModel()
 {
@@ -53,9 +54,14 @@ void CModel::Initialize()
 
 void CModel::load_model()
 {   
-    // RigidBodyDynamics::Addons::URDFReadFromFile("/home/kist-robot2/catkin_ws/src/franka_emika_panda/model/franka_panda/panda.urdf", &_model, false, true); // old model with hand - working well 
-	RigidBodyDynamics::Addons::URDFReadFromFile("/home/kist-robot2/Franka/franka_valve/model/fr3.urdf", &_model, false, true); //new model from ./comile 근데 확장자만 바뀌고 urdf로 변환은 안된것같은데.. 
-    cout << endl << endl << "Model Loaded for RBDL." << endl << "Total DoFs: " << _model.dof_count << endl << endl;
+    // RigidBodyDynamics::Addons::URDFReadFromFile("/home/kist-robot2/Franka/2024_kist_valve_env/franka_valve/model/fr3.urdf", &_model, false, true); //new model from ./comile 근데 확장자만 바뀌고 urdf로 변환은 안된것같은데.. 
+    RigidBodyDynamics::Addons::URDFReadFromFile("/home/kist/artom/model/fr3.urdf", &_model, false, true); //new model from ./comile 근데 확장자만 바뀌고 urdf로 변환은 안된것같은데.. 
+    
+	// filesystem::path relative_path("fr3.urdf");
+    // filesystem::path absolute_path = filesystem::absolute(relative_path);
+	// cout<<"////////////////////"<<endl;
+	// cout<<"absolute path:"<<absolute_path<<endl;
+	cout << endl << endl << "Model Loaded for RBDL." << endl << "Total DoFs: " << _model.dof_count << endl << endl;
 	if (_model.dof_count != _k)
 	{
 		cout << "Simulation model and RBDL model mismatch!!!" << endl << endl;

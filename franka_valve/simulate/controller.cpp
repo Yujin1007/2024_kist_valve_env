@@ -200,7 +200,7 @@ tuple<std::vector<double>, double> CController::write_pybind()
 void CController::put_action_pybind(array<double, 2> action_rotation, double action_force)
 {
 	_ddroll = action_rotation[0];
-//	_ddroll = 0.0;
+	// _ddroll = 0.0;
 	_ddpitch = action_rotation[1];
 	_droll = _droll + _ddroll * _dt;
 	_dpitch = _dpitch + _ddpitch*_dt;

@@ -14,17 +14,17 @@
 
 
 
-                        <mesh name="valve_base" file="objects/valve_base.STL" scale="6 6 6"/>
-                        <mesh name="valve_base0" file="objects/valve_base/valve_base000.obj" scale="6 6 6"/>
-                        <mesh name="valve_base1" file="objects/valve_base/valve_base001.obj" scale="6 6 6"/>
-                        <mesh name="valve_base2" file="objects/valve_base/valve_base002.obj" scale="6 6 6"/>
-                        <mesh name="valve_base3" file="objects/valve_base/valve_base003.obj" scale="6 6 6"/>
-                        <mesh name="valve_base4" file="objects/valve_base/valve_base004.obj" scale="6 6 6"/>
+                        <mesh name="valve_base" file="objects/valve_base.STL" scale="5 5 5"/>
+                        <mesh name="valve_base0" file="objects/valve_base/valve_base000.obj" scale="5 5 5"/>
+                        <mesh name="valve_base1" file="objects/valve_base/valve_base001.obj" scale="5 5 5"/>
+                        <mesh name="valve_base2" file="objects/valve_base/valve_base002.obj" scale="5 5 5"/>
+                        <mesh name="valve_base3" file="objects/valve_base/valve_base003.obj" scale="5 5 5"/>
+                        <mesh name="valve_base4" file="objects/valve_base/valve_base004.obj" scale="5 5 5"/>
 
-                        <mesh name="valve" file="objects/valve.STL" scale="6 6 6"/>
-                        <mesh name="valve0" file="objects/valve/valve000.obj" scale="6 6 6"/>
-                        <mesh name="valve1" file="objects/valve/valve001.obj" scale="6 6 6"/>
-                        <mesh name="valve2" file="objects/valve/valve002.obj" scale="6 6 6"/>
+                        <mesh name="valve" file="objects/valve.STL" scale="5 5 5"/>
+                        <mesh name="valve0" file="objects/valve/valve000.obj" scale="5 5 5"/>
+                        <mesh name="valve1" file="objects/valve/valve001.obj" scale="5 5 5"/>
+                        <mesh name="valve2" file="objects/valve/valve002.obj" scale="5 5 5"/>
 
 
                       </asset>
